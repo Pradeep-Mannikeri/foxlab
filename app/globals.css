@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --base-font: "Inter", sans-serif;
+  --heading-font: "Playfair Display", Georgia, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 700 !important;
+}
+
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif !important;
+  font-size: 19px !important;
+}
+
+p {
+  line-height: 33px !important;
+  color: #4b5563 !important;
+}
+
+.sub-title,
+.sub {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+
+/* Works on Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Thumb */
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #5835f2;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+/* Hover */
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #4b2ecc;
+}
+
+/* Active click */
+html::-webkit-scrollbar-thumb:active,
+body::-webkit-scrollbar-thumb:active {
+  background: #2e1bb5;
+}
+
+/* Firefox fallback */
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #5835f2 #ffffff;
+}
+
+svg {
+  color: #5835f2;
+  transition: all 0.3s ease;
+}
+
+/* Global Button & Call-to-Action Animations */
+button,
+.button,
+.btn,
+a.button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover,
+a.button:hover,
+.btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(81, 56, 238, 0.2);
+}
+
+button::after,
+a.button::after,
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+button:hover::after,
+a.button:hover::after,
+.btn:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+button:active,
+a.button:active,
+.btn:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Ensure SVGs inside buttons are White by default */
+button svg,
+a.button svg,
+.btn svg {
+  color: #ffffff !important;
+  font-size: 1.2em;
+  transition: transform 0.4s ease;
+}
+
+button:hover svg,
+a.button:hover svg,
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Base link animation */
+a {
+  transition:
+    color 0.3s ease,
+    border 0.3s ease,
+    background 0.3s ease;
+}
+
+.core-text {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.4 !important;
+}
+
+.custom-lead-text {
+  font-size: 15px !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.4 !important;
+}
+

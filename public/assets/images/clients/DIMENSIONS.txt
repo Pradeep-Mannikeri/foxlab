@@ -1,0 +1,2 @@
+140 - WIDTH
+50 - HEIGHT
