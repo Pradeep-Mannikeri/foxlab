@@ -3,11 +3,11 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1016 801" style="enable-background:new 0 0 1016 801;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#5835F2;stroke-width:20;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#000000;stroke-width:20;stroke-linejoin:round;}
-	.st2{fill:none;stroke:#5835F2;stroke-width:20;stroke-linecap:round;stroke-miterlimit:10;}
-	.st3{fill:#FFFFFF;stroke:#5835F2;stroke-width:20;stroke-miterlimit:10;}
-	.st4{fill:none;stroke:#5835F2;stroke-width:20;stroke-linejoin:round;}
+	.st0{fill:none;stroke:#5835F2;stroke-width:30;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:30;stroke-linejoin:round;}
+	.st2{fill:none;stroke:#5835F2;stroke-width:30;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;stroke:#5835F2;stroke-width:30;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#5835F2;stroke-width:30;stroke-linejoin:round;}
 </style>
 <line class="st0" x1="60" y1="122.7" x2="743" y2="122.7"/>
 <rect x="111" y="326.4" class="st0" width="124" height="127.6"/>

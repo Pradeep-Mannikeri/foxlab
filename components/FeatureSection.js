@@ -166,7 +166,9 @@ const FeatureItem = styled.div`
     p {
       margin: 0;
       color: var(--base-color, #4b5563);
-      font-size: 16px;
+      font-size: 18.62px;
+      line-height: 25px !important;
+      letter-spacing: 0.5px;
     }
   }
 `;

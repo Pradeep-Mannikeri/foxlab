@@ -161,8 +161,9 @@ const AboutGrid = styled.div`
 
 const AboutContent = styled.div`
   p {
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 18.62px;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
     color: #4b5563;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -277,8 +278,9 @@ const SolutionCard = styled.div`
     margin-bottom: 12px;
   }
   p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18.62px;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
     color: #4b5563;
     margin: 0;
   }
@@ -360,8 +362,9 @@ const VMCard = styled.div`
     margin: 0 0 15px;
   }
   p {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
+    font-size: 18.62px !important;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
     color: #4b5563;
     margin: 0 auto 12px;
     max-width: 95%;

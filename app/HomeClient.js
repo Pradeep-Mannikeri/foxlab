@@ -160,8 +160,9 @@ const HeroSection = styled.section`
     }
   }
 
-  h1 {
-    font-size: 44px;
+  h1,
+  ${SectionTitle} h1 {
+    font-size: 60px; /* 12% increase from 44px */
     font-weight: 800;
     letter-spacing: -1px;
     line-height: 1.15;
@@ -170,13 +171,20 @@ const HeroSection = styled.section`
     margin-bottom: 20px;
     animation: ${fadeInUp} 0.6s ease-out;
     @media (max-width: 768px) {
-      font-size: 36px;
+      font-size: 40.32px; /* 12% increase from 36px */
+    }
+    span {
+      color: var(--primary-color);
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      font-size: inherit !important;
     }
   }
 
   p {
-    font-size: 19px;
-    line-height: 1.7;
+    font-size: 18.62px;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
     color: var(--base-color);
     max-width: 500px;
     margin-bottom: 35px;
@@ -473,8 +481,9 @@ const SolutionsSection = styled.section`
 
     p {
       color: var(--base-color);
-      font-size: 18px !important;
-      line-height: 1.6 !important;
+      font-size: 18.62px;
+      line-height: 25px !important;
+      letter-spacing: 0.5px;
       margin: 0;
     }
   }
@@ -537,6 +546,9 @@ const AboutSectionWrapper = styled.section`
   .about-content {
     p {
       margin-bottom: 30px;
+      font-size: 18.62px;
+      line-height: 25px !important;
+      letter-spacing: 0.5px;
     }
   }
 
@@ -653,7 +665,9 @@ const HomeClient = () => {
             <div>
               <SectionTitle $mb="0" $centerMobile>
                 <span className="sub-title">Software Company</span>
-                <h1>Advanced analytics software solutions</h1>
+                <h1>
+                  Advanced analytics <span>software</span> solutions
+                </h1>
               </SectionTitle>
               <p>
                 We bring technology and creativity together to build powerful
@@ -661,7 +675,11 @@ const HomeClient = () => {
                 productions, we deliver everything under one roof.
               </p>
               <ButtonWrapper>
-                <ThemeButton onClick={openModal}>
+                <ThemeButton
+                  href="/assets/FOX_LAB_Growth_Proposal.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Download <FaDownload />
                 </ThemeButton>
                 <ThemeButton href="/services" className="get-started">
@@ -724,14 +742,14 @@ const HomeClient = () => {
             <div className="partner-marquee-row">
               <div className="partner-marquee-track left">
                 {[
-                  ...[1, 2, 3, 4, '14'],
-                  ...[1, 2, 3, 4, '14'],
-                  ...[1, 2, 3, 4, '14'],
-                  ...[1, 2, 3, 4, '14'],
+                  ...[1, 2, 3, 4, "14"],
+                  ...[1, 2, 3, 4, "14"],
+                  ...[1, 2, 3, 4, "14"],
+                  ...[1, 2, 3, 4, "14"],
                 ].map((item, idx) => {
-                  const isClient = item === '14';
-                  const src = isClient 
-                    ? `/assets/images/clients/14.png` 
+                  const isClient = item === "14";
+                  const src = isClient
+                    ? `/assets/images/clients/14.png`
                     : `/assets/images/partners/partner${item}.png`;
                   const alt = isClient ? "AI Solutions" : `Partner ${item}`;
                   return (
@@ -746,14 +764,14 @@ const HomeClient = () => {
             <div className="partner-marquee-row">
               <div className="partner-marquee-track right">
                 {[
-                  ...[8, 7, 6, 5, '14'],
-                  ...[8, 7, 6, 5, '14'],
-                  ...[8, 7, 6, 5, '14'],
-                  ...[8, 7, 6, 5, '14'],
+                  ...[8, 7, 6, 5, "14"],
+                  ...[8, 7, 6, 5, "14"],
+                  ...[8, 7, 6, 5, "14"],
+                  ...[8, 7, 6, 5, "14"],
                 ].map((item, idx) => {
-                  const isClient = item === '14';
-                  const src = isClient 
-                    ? `/assets/images/clients/14.png` 
+                  const isClient = item === "14";
+                  const src = isClient
+                    ? `/assets/images/clients/14.png`
                     : `/assets/images/partners/partner${item}.png`;
                   const alt = isClient ? "AI Solutions" : `Partner ${item}`;
                   return (
@@ -774,8 +792,19 @@ const HomeClient = () => {
           <SectionTitle $center>
             <span className="sub-title">Our Special Solutions</span>
             <h1>We Customize Your Software in Smart Ways</h1>
-            <p className="custom-lead-text" style={{ color: "#4b5563", marginTop: "15px", maxWidth: "750px", margin: "15px auto 0" }}>
-              Explore our wide range of premium digital services designed to scale your business,<br />elevate your brand, and craft extraordinary experiences.
+            <p
+              className="custom-lead-text"
+              style={{
+                color: "#4b5563",
+                marginTop: "15px",
+                maxWidth: "750px",
+                margin: "15px auto 0",
+              }}
+            >
+              Explore our wide range of premium digital services designed to
+              scale your business,
+              <br />
+              elevate your brand, and craft extraordinary experiences.
             </p>
           </SectionTitle>
           <div

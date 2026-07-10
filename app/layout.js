@@ -1,5 +1,6 @@
 import StyledComponentsRegistry from "../components/StyledComponentsRegistry";
 import Navbar from "../components/Navbar";
+import Preloader from "../components/Preloader";
 import "./globals.css";
 
 export const metadata = {
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>
+          <Preloader />
           <Navbar />
           <main>{children}</main>
         </StyledComponentsRegistry>

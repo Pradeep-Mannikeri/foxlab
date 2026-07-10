@@ -43,11 +43,11 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding : 50px;
+  padding: 50px;
   animation: ${fadeIn} 0.2s ease-out;
-  font-family : 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 10px;
     align-items: flex-start;
   }
@@ -66,10 +66,17 @@ const ModalContent = styled.div`
   overflow-y: auto;
 
   /* Custom scrollbar */
-  &::-webkit-scrollbar { width: 6px; }
-  &::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 10px;
+  }
 
-  @media (max-width: 1024px) { padding: 40px; }
+  @media (max-width: 1024px) {
+    padding: 40px;
+  }
 
   @media (max-width: 768px) {
     padding: 40px 30px;
@@ -101,8 +108,13 @@ const ModalContent = styled.div`
     color: #111827;
     line-height: 1.2;
 
-    @media (max-width: 768px) { font-size: 22px; }
-    @media (max-width: 480px) { font-size: 24px; text-align: center; }
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+    @media (max-width: 480px) {
+      font-size: 24px;
+      text-align: center;
+    }
   }
 
   .close-btn {
@@ -135,131 +147,208 @@ const ModalContent = styled.div`
       width: 45px;
       height: 45px;
       background: #ffffff;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  form button[type="submit"] {
+    font-size: 13px !important;
+    span {
+      font-size: 13px !important;
     }
   }
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: left;
-  
+
   @media (max-width: 425px) {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
+
   label {
     display: block;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 13px !important;
     font-weight: 600;
-    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    transition: color 0.2s ease;
+  }
+
+  &:focus-within label {
+    color: rgb(88, 53, 242);
   }
 
   input[type="text"],
   input[type="email"],
-  input[type="tel"],
-  input[type="file"] {
-    width: 100%; /* Changed from 94% back to 100% for better filling */
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 15px;
+  input[type="tel"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 13px;
     font-family: inherit;
-    transition: all 0.2s ease;
-    box-sizing: border-box; /* Crucial for width: 100% */
+    background: #f9fafb;
+    color: #111827;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
 
     @media (max-width: 375px) {
       padding: 10px;
-      font-size: 14px;
+      font-size: 12px;
+    }
+
+    &::placeholder {
+      color: #9ca3af;
+      font-size: 13px;
+    }
+
+    &:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: rgb(88, 53, 242);
+      box-shadow: 0 0 0 4px rgba(88, 53, 242, 0.15);
+      transform: translateY(-1px);
+    }
+  }
+
+  input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed rgba(88, 53, 242, 0.25);
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: inherit;
+    background: rgba(88, 53, 242, 0.02);
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    &::file-selector-button {
+      background: rgb(88, 53, 242);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin-right: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    &:hover {
+      background: rgba(88, 53, 242, 0.05);
+      border-color: rgb(88, 53, 242);
+
+      &::file-selector-button {
+        background: #422ad1;
+      }
     }
 
     &:focus {
       outline: none;
       border-color: rgb(88, 53, 242);
-      box-shadow: 0 0 0 3px rgba(88, 53, 242, 0.1);
+      box-shadow: 0 0 0 4px rgba(88, 53, 242, 0.15);
     }
   }
 `;
 
+const Section = styled.section`
+  padding: 30px 0;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "poppins", sans-serif;
+`;
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  .illustration {
+    width: 470px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 40px;
+    display: block;
 
+    @media (max-width: 1024px) {
+      width: 380px;
+    }
 
-const Section = styled.section` padding: 30px 0; background-color: #f9fafb; min-height: 100vh; font-family: 'poppins', sans-serif; `;
-const Container = styled.div` max-width: 1200px; margin: 0 auto; padding: 0 20px; .illustration {  width: 470px;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto 40px;
-  display: block;
-
-  @media (max-width: 1024px) {
-    width: 380px;
+    @media (max-width: 768px) {
+      width: 260px;
+    }
   }
+`;
+const HeaderArea = styled.div`
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
 
-  @media (max-width: 768px) {
-    width: 260px;
-  } }`;
-const HeaderArea = styled.div` 
-    text-align: center; 
-    max-width: 700px;
-    margin: 0 auto 50px; 
-
-    .sub-title { 
-    font-size: 13px; 
-    font-weight: 700; 
-    padding: 6px 14px; 
-    border-radius: 4px; 
+  .sub-title {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 4px;
     margin-bottom: 15px;
-    background: #f3f1fe; 
-    color: rgb(88, 53, 242); 
+    background: #f3f1fe;
+    color: rgb(88, 53, 242);
     display: inline-block;
-    text-transform: uppercase; 
-    } 
-
-   h1 {
-  font-size: 40px;
-
-  @media (max-width: 768px) {
-    font-size: 26px;
+    text-transform: uppercase;
   }
-}
 
-p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #4b5563;
+  h1 {
+    font-size: 40px;
 
-  @media (max-width: 768px) {
-    font-size: 14px;
+    @media (max-width: 768px) {
+      font-size: 26px;
+    }
   }
-}
-       `;
 
-const FilterGroup = styled.div` 
-display: flex; 
-justify-content: center;
- flex-wrap: wrap; 
- gap: 12px; 
- margin-bottom: 50px;
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+`;
+
+const FilterGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 50px;
   @media (max-width: 768px) {
     gap: 8px;
   }
-  `;
+`;
 
 const FilterBtn = styled(Link)`
- background: ${(props) => (props.$active ? "rgb(88, 53, 242)" : "#ffffff")};
-  color: ${(props) => (props.$active ? "#ffffff" : "#4b5563")}; 
-  border: 1px solid ${(props) => (props.$active ? "rgb(88, 53, 242)" : "#e5e7eb")}; 
-  padding: 10px 24px; 
-  border-radius: 5px; 
-  font-size: 14px;
-   font-weight: 600;
-    text-decoration: none; 
-      @media (max-width: 768px) {
+  background: ${(props) => (props.$active ? "rgb(88, 53, 242)" : "#ffffff")};
+  color: ${(props) => (props.$active ? "#ffffff" : "#4b5563")};
+  border: 1px solid
+    ${(props) => (props.$active ? "rgb(88, 53, 242)" : "#e5e7eb")};
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 15px !important;
+  font-weight: 600;
+  text-decoration: none;
+  @media (max-width: 768px) {
     padding: 8px 14px;
-    font-size: 12px;
+    font-size: 12px !important;
   }
-    `;
+`;
 
-const LayoutGrid = styled.div`  display: grid;
+const LayoutGrid = styled.div`
+  display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 40px;
   align-items: start;
@@ -267,7 +356,8 @@ const LayoutGrid = styled.div`  display: grid;
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     gap: 30px;
-  } `;
+  }
+`;
 const ListColumn = styled.div`
   display: ${(props) => (props.$hideOnMobile ? "none" : "flex")};
   flex-direction: column;
@@ -276,7 +366,9 @@ const ListColumn = styled.div`
   transform: translateX(-40px);
   animation: ${(props) =>
     props.$animate
-      ? css`${slideInLeft} 0.8s ease-out forwards`
+      ? css`
+          ${slideInLeft} 0.8s ease-out forwards
+        `
       : "none"};
 
   @media (min-width: 992px) {
@@ -291,7 +383,9 @@ const DetailsColumn = styled.div`
   transform: translateX(40px);
   animation: ${(props) =>
     props.$animate
-      ? css`${slideInRight} 0.8s ease-out forwards`
+      ? css`
+          ${slideInRight} 0.8s ease-out forwards
+        `
       : "none"};
   animation-delay: 0.1s;
 
@@ -304,77 +398,123 @@ const DetailsColumn = styled.div`
   }
 `;
 const JobCard = styled(Link)`
- display: block; 
- background: #ffffff;
-  border: 1px solid ${(props) => (props.$selected ? "rgb(88, 53, 242)" : "#e5e7eb")};
-   border-radius: 12px;
-    padding: 24px;
-     text-decoration: none;
-     @media (max-width: 768px) {
+  display: block;
+  background: #ffffff;
+  border: 1px solid
+    ${(props) => (props.$selected ? "rgb(88, 53, 242)" : "#e5e7eb")};
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  @media (max-width: 768px) {
     padding: 18px;
   }
 
-      h3 {
-        font-size: 18px;
+  h3 {
+    font-size: 22px !important;
+    color: rgb(88, 53, 242);
 
     @media (max-width: 768px) {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 
-       p {
-        font-size: 14px; 
-        color: #6b7280; 
-        margin: 0 0 16px; 
-        } 
-        .tags { 
-        display: flex;
-         gap: 8px; 
-         span { 
-         background: #f3f1fe;
-          color: rgb(88, 53, 242);
-           padding: 4px 12px; 
-           border-radius: 5px;
-            font-size: 12px; 
-            } 
-            }`;
-const EmptyState = styled.p` text-align: center; color: #6b7280; padding: 40px 0; font-size: 15px; `;
+  p {
+    font-size: 15px;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    margin: 0 0 16px;
+    padding: 5% 0;
+  }
+  .tags {
+    display: flex;
+    gap: 8px;
+    span {
+      background: #f3f1fe;
+      color: rgb(88, 53, 242);
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 14px !important;
+      font-weight: 600;
+    }
+  }
+`;
+const EmptyState = styled.p`
+  text-align: center;
+  color: #6b7280;
+  padding: 40px 0;
+  font-size: 15px;
+`;
 const DetailsPane = styled.div`
- background: #ffffff;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-   padding: 40px; 
-    @media (max-width: 1024px) {
+  padding: 40px;
+  @media (max-width: 1024px) {
     padding: 28px;
   }
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 20px;
   }
-   .pane-header { 
-   display: flex;
-    justify-content: space-between; 
+  .pane-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-     border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 25px;
-       margin-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
 
-       @media (max-width: 600px) {
+    @media (max-width: 600px) {
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
     }
-        h2 { 
-        margin: 0; 
-        } 
-        } 
-        h3 { 
-        margin: 30px 0 15px; 
-        }
-         p, li {
-          font-size: 15px; color: #4b5563; } ul { padding-left: 20px; }`;
+    h2 {
+      margin: 0;
+    }
+  }
+  h3 {
+    margin: 30px 0 15px;
+  }
+  p,
+  li {
+    font-size: 15px;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
+    color: #4b5563;
+  }
+  ul {
+    padding-left: 20px;
+  }
+`;
 
+const MetaGrid = styled.div`
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 
-const MetaGrid = styled.div` background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 25px; margin-top: 40px; display: flex; flex-direction: column; gap: 15px; .meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid #e5e7eb; &:last-child { border-bottom: none; padding-bottom: 0; } }`;
+  strong,
+  span {
+    font-size: 15px !important;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+`;
 
 // ============================================================================
 // MAIN COMPONENT
@@ -407,7 +547,7 @@ const CareerPage = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (leftRef.current) observer.observe(leftRef.current);
@@ -552,18 +692,32 @@ const CareerPage = () => {
 
           <FilterGroup>
             {filters.map((filter) => (
-              <FilterBtn key={filter} href={`?filter=${filter}`} scroll={false} $active={activeFilter === filter}>
+              <FilterBtn
+                key={filter}
+                href={`?filter=${filter}`}
+                scroll={false}
+                $active={activeFilter === filter}
+              >
                 {filter}
               </FilterBtn>
             ))}
           </FilterGroup>
 
           <LayoutGrid>
-            <ListColumn ref={leftRef} $hideOnMobile={!!selectedJobId} $animate={leftVisible}>
+            <ListColumn
+              ref={leftRef}
+              $hideOnMobile={!!selectedJobId}
+              $animate={leftVisible}
+            >
               {filteredJobs.map((job) => {
                 const isSelected = selectedJob?.id === job.id;
                 return (
-                  <JobCard key={job.id} href={`?filter=${activeFilter}&jobId=${job.id}`} scroll={false} $selected={isSelected}>
+                  <JobCard
+                    key={job.id}
+                    href={`?filter=${activeFilter}&jobId=${job.id}`}
+                    scroll={false}
+                    $selected={isSelected}
+                  >
                     <h3>{job.title}</h3>
                     <p>{job.description}</p>
                     <div className="tags">
@@ -573,10 +727,16 @@ const CareerPage = () => {
                   </JobCard>
                 );
               })}
-              {filteredJobs.length === 0 && <EmptyState>No jobs found for this category.</EmptyState>}
+              {filteredJobs.length === 0 && (
+                <EmptyState>No jobs found for this category.</EmptyState>
+              )}
             </ListColumn>
 
-            <DetailsColumn ref={rightRef} $hideOnMobile={!selectedJobId} $animate={rightVisible}>
+            <DetailsColumn
+              ref={rightRef}
+              $hideOnMobile={!selectedJobId}
+              $animate={rightVisible}
+            >
               <DetailsPane key={selectedJob?.id}>
                 {selectedJob ? (
                   <>
@@ -621,7 +781,14 @@ const CareerPage = () => {
                     </MetaGrid>
                   </>
                 ) : (
-                  <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      height: "100%",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
                     <EmptyState>Select a job to view details.</EmptyState>
                   </div>
                 )}
@@ -643,25 +810,59 @@ const CareerPage = () => {
             <form onSubmit={handleSubmit}>
               <FormGroup>
                 <label>Name</label>
-                <input type="text" name="name" required value={formData.name} onChange={handleInputChange} placeholder="John Doe" />
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="John Doe"
+                />
               </FormGroup>
 
               <FormGroup>
                 <label>Email Address</label>
-                <input type="email" name="email" required value={formData.email} onChange={handleInputChange} placeholder="john@example.com" />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="john@example.com"
+                />
               </FormGroup>
 
               <FormGroup>
                 <label>Phone Number</label>
-                <input type="tel" name="phone" required value={formData.phone} onChange={handleInputChange} placeholder="+91 0000000000" />
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder="+91 0000000000"
+                />
               </FormGroup>
 
               <FormGroup>
                 <label>Resume/CV (PDF or Word)</label>
-                <input type="file" accept=".pdf,.doc,.docx" required onChange={handleFileChange} />
+                <input
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  required
+                  onChange={handleFileChange}
+                />
               </FormGroup>
 
-              <ThemeButton type="submit" disabled={isSubmitting}>
+              <ThemeButton
+                type="submit"
+                disabled={isSubmitting}
+                style={{
+                  width: "100%",
+                  justifyContent: "center",
+                  marginTop: "10px",
+                }}
+              >
                 {isSubmitting ? "Sending..." : "Submit Application"}
               </ThemeButton>
             </form>
@@ -678,8 +879,7 @@ const CareerPage = () => {
             borderRadius: "8px",
             color: "#fff",
             fontWeight: "600",
-            background:
-              messageType === "success" ? "#16a34a" : "#dc2626",
+            background: messageType === "success" ? "#16a34a" : "#dc2626",
             boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
             zIndex: 2000,
           }}

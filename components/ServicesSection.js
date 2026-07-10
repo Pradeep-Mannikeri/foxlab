@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
+import ThemeButton from "@/components/ThemeButton";
 
 // --- Animations ---
 const fadeIn = keyframes`
@@ -74,19 +75,19 @@ const TabNav = styled.div`
 `;
 
 const TabButton = styled.button`
-  background: ${(props) => (props.$active ? "var(--primary-color, #5138ee)" : "#f3f4f6")};
-  color: ${(props) => (props.$active ? "#ffffff" : "var(--base-color, #4b5563)")};
-  border: none;
-  padding: 12px 24px;
-  font-size: 15px;
+  background: ${(props) => (props.$active ? "rgb(88, 53, 242)" : "#ffffff")};
+  color: ${(props) => (props.$active ? "#ffffff" : "#4b5563")};
+  border: 1px solid
+    ${(props) => (props.$active ? "rgb(88, 53, 242)" : "#e5e7eb")};
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 15px !important;
   font-weight: 600;
-  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
-
-  &:hover {
-    background: ${(props) => (props.$active ? "var(--primary-color, #5138ee)" : "#e5e7eb")};
-    color: ${(props) => (props.$active ? "#ffffff" : "var(--heading-color, #111827)")};
+  @media (max-width: 768px) {
+    padding: 8px 14px;
+    font-size: 12px !important;
   }
 `;
 
@@ -116,30 +117,13 @@ const ContentText = styled.div`
   }
 
   p {
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18.62px;
+    line-height: 25px !important;
+    letter-spacing: 0.5px;
     color: var(--base-color, #4b5563);
     margin: 0 0 25px;
   }
 
-  .read-more {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--primary-color, #5138ee);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.2s ease;
-    text-decoration: none;
-
-    &:hover {
-      color: #422ad1; /* Slightly darker purple on hover */
-    }
-  }
-
-  @media (max-width: 991px) {
-    .read-more { justify-content: center; }
-  }
 `;
 
 const ContentImage = styled.div`
@@ -242,9 +226,9 @@ const ServicesSection = () => {
                     <ContentText>
                         <h3>{tabData[activeTab].heading}</h3>
                         <p>{tabData[activeTab].description}</p>
-                        <Link href="/services" className="read-more">
+                        <ThemeButton href="/services">
                             Read More <FaArrowRight />
-                        </Link>
+                        </ThemeButton>
                     </ContentText>
 
                     <ContentImage>

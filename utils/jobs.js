@@ -79,8 +79,8 @@ export const jobs = [
         title: "Video Editor & Animator",
         category: "Video Production",
         description: "Creative video editor needed for post-production, motion graphics, and visual storytelling.",
-        type: "Part-time",
-        duration: "Freelance",
+        type: "Full-time",
+        duration: "Permanent",
         fullDescription: "We need a talented Video Editor to assemble recorded footage into a finished project that matches the director's vision and is suitable for broadcasting. Ultimately, as a film and video editor, you should be able to bring sight and sound together in order to tell a cohesive story.",
         responsibilities: [
             "Manipulate and edit film pieces in a way that is invisible to the audience.",
@@ -94,9 +94,9 @@ export const jobs = [
             "Thorough knowledge of timing, motivation, and continuity.",
             "Creative mind and storytelling skills."
         ],
-        workingHours: "Project-based",
-        location: "Remote",
-        jobType: "Freelance"
+        workingHours: "10:00 AM - 07:00 PM (IST)",
+        location: "Hubballi, Karnataka (On-site)",
+        jobType: "Full-time"
     }
 ];
 
